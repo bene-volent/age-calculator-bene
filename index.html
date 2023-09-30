@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./src/stylesheets/style.css">
+</head>
+
+<body>
+  <main class="main">
+    <form class="form" data-error="">
+      <div class="inputBox-container">
+        <div class="inputBox"  id="dateBox">
+          <label for="dateInput" class="form-label">Day</label>
+          <input id="dateInput" type="number" class="form-input" max="31" min="1" required placeholder="DD" />
+          <span class="inputBox-error-container" data-error-type="0">
+            <span class="inputBox-error" data-error="1">This field is required</span>
+            <span class="inputBox-error" data-error="2">Must be a valid day</span>
+          </span>
+        </div>
+        <div class="inputBox" id="monthBox">
+          <label for="monthInput" class="form-label">Month</label><input type="number" class="form-input" max="12" min="1" required
+            id="monthInput" placeholder="MM" />
+          <span class="inputBox-error-container" data-error-type="0">
+            <span class="inputBox-error" data-error="1">This field is required</span>
+            <span class="inputBox-error" data-error="2">Must be a valid month</span>
+          </span>
+        </div>
+        <div class="inputBox" id="yearBox">
+          <label for="yearInput" class="form-label">Year</label><input type="number" class="form-input" placeholder="YYYY" min="1900"
+            max="2100" id="yearInput" required />
+          <span class="inputBox-error-container" data-error-type="0">
+            <span class="inputBox-error" data-error="1">This field is required</span>
+            <span class="inputBox-error" data-error="2">Must be in the past</span>
+          </span>
+        </div>
+        <span class="form-error">Must be a valid date</span>
+      </div>
+      <div class="submitBtn-container">
+        <button class="submitBtn" type="submit">
+          <span class="sr-only">Submit Date</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 46 44">
+            <g fill="none" stroke="#FFF" stroke-width="2">
+              <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div class="result-container">
+      <p class="result" data-result-type="year"><span class="result-value">--</span> years</p>
+      <p class="result" data-result-type="month"><span class="result-value">--</span> months</p>
+      <p class="result" data-result-type="date"><span class="result-value">--</span> days</p>
+    </div>
+  </main>
+
+  <script  src="./main.js"></script>
+
+</body>
+
+</html>

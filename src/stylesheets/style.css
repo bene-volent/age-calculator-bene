@@ -1,0 +1,408 @@
+@font-face {
+  font-family: "poppins-bold";
+  src: url("../../assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "poppins-bold-italic";
+  src: url("../../assets/fonts/Poppins-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "poppins-extra-bold";
+  src: url("../../assets/fonts/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "poppins-extra-bold-italic";
+  src: url("../../assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: "poppins";
+  src: url("../../assets/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "poppins-italic";
+  src: url("../../assets/fonts/Poppins-Italic.ttf");
+}
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button,
+[type=button],
+[role=button] {
+  padding: 0;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 100vh;
+}
+
+:root {
+  scrollbar-color: gray;
+  scrollbar-width: 5px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:root {
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-7: 1.75rem;
+  --size-8: 2rem;
+  --size-9: 2.25rem;
+  --size-10: 2.5rem;
+  --size-11: 2.75rem;
+  --size-12: 3rem;
+  --size-13: 3.25rem;
+  --size-14: 3.5rem;
+  --size-15: 3.75rem;
+  --size-16: 4rem;
+  --size-17: 4.25rem;
+  --size-18: 4.5rem;
+  --size-19: 4.75rem;
+  --size-20: 5rem;
+  --size-21: 5.25rem;
+  --size-22: 5.5rem;
+  --size-23: 5.75rem;
+  --size-24: 6rem;
+  --size-25: 6.25rem;
+  --size-26: 6.5rem;
+  --size-27: 6.75rem;
+  --size-28: 7rem;
+  --size-29: 7.25rem;
+  --size-30: 7.5rem;
+  --size-31: 7.75rem;
+  --size-32: 8rem;
+  --size-33: 8.25rem;
+  --size-34: 8.5rem;
+  --size-35: 8.75rem;
+  --size-36: 9rem;
+  --ff-b: "poppins-bold", sans-serif;
+  --ff-bi: "poppins-bold-italic", sans-serif;
+  --ff-eb: "poppins-extra-bold", sans-serif;
+  --ff-ebi: "poppins-extra-bold-italic", sans-serif;
+  --ff-reg: "poppins", sans-serif;
+  --ff-regi: "poppins-italic", sans-serif;
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+/**
+ * Problem Specific : Hides the arrows on the number inputs
+ */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+  display: grid;
+  margin-top: 5.5rem;
+  width: min(100% - 2rem, 850px);
+  margin-inline: auto;
+  background-color: var(--off-white);
+  font-family: var(--ff-reg);
+}
+@media (width > 768px) {
+  body {
+    align-content: center;
+    margin-top: 0;
+    min-height: 100vh;
+  }
+}
+
+.main {
+  background-color: var(--white);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 3rem 1.5rem;
+  border-radius: 1.5rem;
+  border-bottom-right-radius: 5rem;
+}
+@media (width > 768px) {
+  .main {
+    padding: 3rem 4.25rem;
+    border-bottom-right-radius: 12rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (width > 768px) {
+  .form {
+    gap: 1rem;
+  }
+}
+.form-label {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-family: var(--ff-b);
+  color: var(--smokey-grey);
+  letter-spacing: 0.375ch;
+  cursor: pointer;
+}
+@media (width > 768px) {
+  .form-label {
+    font-size: 1rem;
+  }
+}
+.form-input {
+  margin-block: 0.25rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 0.33rem;
+  padding: 0.75rem;
+  font-size: 1.15em;
+  font-family: var(--ff-b);
+}
+@media (width > 768px) {
+  .form-input {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+.form-input::-moz-placeholder {
+  font-family: var(--ff-b);
+}
+.form-input:-ms-input-placeholder {
+  font-family: var(--ff-b);
+}
+.form-input::-ms-input-placeholder {
+  font-family: var(--ff-b);
+}
+.form-input::-webkit-input-placeholder {
+  font-family: var(--ff-b);
+}
+.form-input::placeholder {
+  font-family: var(--ff-b);
+}
+.form-error {
+  display: none;
+  position: absolute;
+  color: var(--light-red);
+  top: 100%;
+  width: -webkit-max-content !important;
+  width: -moz-max-content !important;
+  width: max-content !important;
+}
+@media (width > 768px) {
+  .form-error {
+    font-size: 1rem;
+  }
+}
+.form[data-error=true] .form-error {
+  display: inline;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.inputBox-container {
+  display: flex;
+  position: relative;
+  gap: 0.75rem;
+}
+@media (width > 768px) {
+  .inputBox-container {
+    gap: 2rem;
+  }
+}
+.inputBox-container > * {
+  flex: 1 0 80px;
+  width: 80px;
+}
+@media (width > 768px) {
+  .inputBox-container > * {
+    flex: 0 1 170px;
+  }
+}
+.inputBox-error {
+  display: none;
+  position: absolute;
+  font-size: 0.75em;
+}
+@media (width > 768px) {
+  .inputBox-error {
+    font-size: 1rem;
+  }
+}
+.inputBox-error-container[data-error-type="1"] .inputBox-error[data-error="1"] {
+  display: block;
+}
+.inputBox-error-container[data-error-type="2"] .inputBox-error[data-error="2"] {
+  display: block;
+}
+.inputBox[data-error=true] .form-label, .inputBox[data-error=true] .inputBox-error {
+  color: var(--light-red);
+}
+.inputBox[data-error=true] .form-input {
+  border-color: var(--light-red);
+}
+
+.submitBtn {
+  aspect-ratio: 1;
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  border-radius: 50%;
+  background-color: var(--purple);
+  z-index: 2;
+}
+@media (width > 768px) {
+  .submitBtn {
+    font-size: 3rem;
+  }
+}
+.submitBtn-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+@media (width > 768px) {
+  .submitBtn-container {
+    justify-content: end;
+  }
+}
+.submitBtn-container::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 1px;
+  background-color: var(--light-grey);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.result {
+  font-size: 3.25rem;
+  font-family: var(--ff-ebi);
+  line-height: 1.1;
+}
+@media (width > 768px) {
+  .result {
+    font-size: 6.5rem;
+  }
+}
+.result-value {
+  color: var(--purple);
+}
+.result-container {
+  margin-top: 2rem;
+}
+@media (width > 768px) {
+  .result-container {
+    margin-top: 1rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
