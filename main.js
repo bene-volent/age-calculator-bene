@@ -118,7 +118,7 @@ form.addEventListener("submit", (event) => {
       }
     }
   }
-
+  console.log(age_day,age_month,age_year,new Date())
   dateResult.textContent = age_day
   monthResult.textContent = age_month
   yearResult.textContent = age_year
